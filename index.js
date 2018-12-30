@@ -2,6 +2,7 @@ class CssFunc {
   constructor($element, attr) {
     this.$element = $element;
     this.attr = attr;
+    // some sort of "virtual style"
     this._functionObject = this._getFunctions(this._getValue($element, attr));
   }
   _getValue($element, attr) {
@@ -75,6 +76,17 @@ class CssFunc {
     } else if (autoAdd) {
       // if autoAdd automatically add the property if it doesn't exist
       this.add(property, value);
+      return true;
+    }
+    return false;
+  }
+  /**
+   * @param  {string} property
+   */
+  delete(property) {
+    if (this.exists(property)) {
+      delete this._functionObject[property];
+      this._setValue(this._getValueFromObject(this._functionObject));
       return true;
     }
     return false;

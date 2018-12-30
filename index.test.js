@@ -105,4 +105,24 @@ describe('css-func', () => {
       );
     });
   });
+  describe('delete()', () => {
+    afterEach(() => {
+      $element.style.transform = transformValue;
+      cssFunc = Cssfunc($element, 'transform');
+    });
+    const object = { ...cssFunc._functionObject };
+    it('deletes the property', () => {
+      expect(cssFunc.delete('rotate')).toBeTruthy();
+      delete object['rotate'];
+      expect(cssFunc._functionObject).toEqual({
+        ...object,
+      });
+    });
+    it('updates the dom element style property', () => {
+      expect(cssFunc.delete('rotate')).toBeTruthy();
+      expect($element.style.transform).toEqual(
+        'translate(10px, 20px) scale(1.1)'
+      );
+    });
+  });
 });
