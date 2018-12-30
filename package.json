@@ -1,0 +1,24 @@
+{
+  "name": "css-func",
+  "version": "1.0.0",
+  "description": "desc",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexcambose/css-func"
+  },
+  "keywords": [
+    "css",
+    "transform",
+    "function",
+    "manipulation"
+  ],
+  "author": "Alexandru Cambose",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
