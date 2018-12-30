@@ -19,6 +19,7 @@
   "author": "Alexandru Cambose",
   "license": "MIT",
   "devDependencies": {
+    "coveralls": "^3.0.2",
     "jest": "^23.6.0"
   }
 }
