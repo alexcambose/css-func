@@ -115,9 +115,9 @@ Delete functoin from element style property
 
 ##### Parameters
 
-| Name      | Type     | Description       |        |
-| --------- | -------- | ----------------- | ------ |
-| fproperty | `string` | CSS function name | &nbsp; |
+| Name      | Type     | Description       |
+| --------- | -------- | ----------------- |
+| fproperty | `string` | CSS function name |
 
 ##### Examples
 
@@ -135,9 +135,9 @@ Returns true if function exists
 
 ##### Parameters
 
-| Name      | Type     | Description       |        |
-| --------- | -------- | ----------------- | ------ |
-| fproperty | `string` | CSS function name | &nbsp; |
+| Name      | Type     | Description       |
+| --------- | -------- | ----------------- |
+| fproperty | `string` | CSS function name |
 
 ##### Examples
 
