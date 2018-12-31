@@ -6,7 +6,8 @@ class CssFunc {
     this._functionObject = this._getFunctions(this._getValue($element, attr));
   }
   _getValue($element, attr) {
-    return window.getComputedStyle($element).getPropertyValue(attr);
+    return $element.style[attr];
+    // return window.getComputedStyle($element).getPropertyValue(attr);
   }
   _setValue(value) {
     this.$element.style[this.attr] = value;

@@ -1,7 +1,7 @@
 {
   "name": "css-func",
   "version": "1.0.0",
-  "description": "desc",
+  "description": "Handle CSS style functions with no worries",
   "main": "index.js",
   "scripts": {
     "test": "jest"

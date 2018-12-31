@@ -88,14 +88,14 @@ describe('css-func', () => {
     });
     const object = { ...cssFunc._functionObject };
     it('adds the property to the functions object', () => {
-      expect(cssFunc.add('rotateY', '90deg')).toBeTruthy();
+      expect(cssFunc.add('rotateY', ['90deg'])).toBeTruthy();
       expect(cssFunc._functionObject).toEqual({
         ...object,
         rotateY: ['90deg'],
       });
     });
     it('automatically updates the property if it is aleardy present', () => {
-      expect(cssFunc.add('rotate', ['90deg'])).toBeTruthy();
+      expect(cssFunc.add('rotate', '90deg')).toBeTruthy();
       expect(cssFunc._functionObject).toEqual({
         ...object,
         rotate: ['90deg'],
