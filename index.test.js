@@ -77,6 +77,9 @@ describe('css-func', () => {
         'translate(10px, 20px) scale(1.1) rotate(45deg) rotateY(90deg)'
       );
     });
+    it('returns false if property does not exist and autoAdd is not enabled', () => {
+      expect(cssFunc.update('rotateX', '90deg', false)).toBeFalsy();
+    });
   });
   describe('add()', () => {
     afterEach(() => {
@@ -92,17 +95,20 @@ describe('css-func', () => {
       });
     });
     it('automatically updates the property if it is aleardy present', () => {
-      expect(cssFunc.add('rotate', '90deg')).toBeTruthy();
+      expect(cssFunc.add('rotate', ['90deg'])).toBeTruthy();
       expect(cssFunc._functionObject).toEqual({
         ...object,
         rotate: ['90deg'],
       });
     });
     it('updates the dom element style property', () => {
-      expect(cssFunc.update('rotateY', '90deg')).toBeTruthy();
+      expect(cssFunc.add('rotateY', '90deg')).toBeTruthy();
       expect($element.style.transform).toEqual(
         'translate(10px, 20px) scale(1.1) rotate(45deg) rotateY(90deg)'
       );
+    });
+    it('returns false if property exists and autoUpdate is not enabled', () => {
+      expect(cssFunc.add('rotate', '90deg', false)).toBeFalsy();
     });
   });
   describe('delete()', () => {
@@ -123,6 +129,9 @@ describe('css-func', () => {
       expect($element.style.transform).toEqual(
         'translate(10px, 20px) scale(1.1)'
       );
+    });
+    it('returns false if property does not exist', () => {
+      expect(cssFunc.delete('something')).toBeFalsy();
     });
   });
 });
